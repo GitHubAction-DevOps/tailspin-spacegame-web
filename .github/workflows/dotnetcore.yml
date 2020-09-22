@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - master
-  pull_request:
-    branches: [ master ]
 
 jobs:
   BUILD:
@@ -62,5 +60,5 @@ jobs:
       uses: Azure/webapps-deploy@v2
       with:
         app-name: heyyworld
-        publish-profile: ${{ secrets.AZUREWEBAPPPUBLISHPROFILE }}
+        publish-profile: ${{ secrets.PUBLISH_PROFILE }}
         package: ${{github.workspace}}\stagingdir
