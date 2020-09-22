@@ -3,8 +3,6 @@ name: .NET Core
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 jobs:
   build:
@@ -18,7 +16,8 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+  #    run: dotnet build --configuration Release --no-restore
+      run: dotnet build "Tailspin.SpaceGame.Web.csproj" -c Release -o /app/build
     - name: Test
       run: dotnet test --no-restore --verbosity normal
     - run: ls ${{github.workspace}}
