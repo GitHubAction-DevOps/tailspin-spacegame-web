@@ -40,9 +40,9 @@ jobs:
     - uses: actions/checkout@v2
     
     - name: Download a Build Artifact
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v2.0.5
       with:
         name: spacegame
-        path: ${{github.workspace}}
+        path: ${{github.workspace}}\stagingdir\
  
-    - run: ls ${{github.workspace}}
+    - run: ls ${{github.workspace}}\stagingdir\
