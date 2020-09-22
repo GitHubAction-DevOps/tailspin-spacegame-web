@@ -49,6 +49,6 @@ jobs:
     - name: Azure WebApp Deploy
       uses: Azure/webapps-deploy@v2
       with:
-        app-name: partsproject
+        app-name: tailspinspace
         publish-profile: ${{secrets.PUBLISH_PROFILE}}
         package: ${{github.workspace}}\stagingdir\Tailspin.SpaceGame.Web
