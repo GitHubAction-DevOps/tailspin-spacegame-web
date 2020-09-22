@@ -46,3 +46,9 @@ jobs:
         path: ${{github.workspace}}\stagingdir\
  
     - run: ls ${{github.workspace}}\stagingdir\
+    - name: Azure WebApp Deploy
+      uses: Azure/webapps-deploy@v2
+      with:
+        app-name: partsproject
+        publish-profile: ${{secrets.PUBLISH_PROFILE}}
+        package: ${{github.workspace}}\stagingdir\Tailspin.SpaceGame.Web
