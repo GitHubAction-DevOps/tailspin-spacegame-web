@@ -3,11 +3,11 @@ on:
   schedule:
     - cron: '0 0 * * *'
   push:
-    branches: [ master, ghdemo ]
+    branches: [  ghdemo ]
     paths-ignore:
         - '**'
   pull_request:
-    branches: [ master ]
+    branches: [ irs ]
 
 jobs:
   container-build:
