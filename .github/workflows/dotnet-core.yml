@@ -38,7 +38,7 @@ jobs:
     steps:
     
     - name: Download a Build Artifact
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v2.0.5
       with:
         name: space-web
         path: ${{github.workspace}}
