@@ -8,8 +8,10 @@ on:
 env:
   app_pool_name: tailswebpool
   app_name: tails
+  target_path: D:\Agents
+  PACKAGE_TEMP_PATH: Tailspin.SpaceGame.Web\bin\Release\netcoreapp3.1\publish
 
-jobs:
+  jobs:
   BUILD:
     name: Build
     runs-on: ubuntu-latest
@@ -53,7 +55,11 @@ jobs:
         name: space-web
         path: ${{github.workspace}}
     
+    - name: copy files
+      run: 
+        Copy-Item -Path "${{github.workspace}}\${{env.PACKAGE_TEMP_PATH}}" -Destination "${{env.target_path}}" -Recurse -Force
+    
     - name: Run Powershell
       run: |
-        & '${{github.workspace}}\app_pool.ps1' -pool_name ${{env.app_pool_name}} -app_name ${{env.app_name}} -workspace ${{github.workspace}}
+        & '${{github.workspace}}\app_pool.ps1' -pool_name ${{env.app_pool_name}} -app_name ${{env.app_name}} -workspace ${{env.target_path}}\publish
        
