@@ -11,7 +11,7 @@ env:
   target_path: D:\Agents
   PACKAGE_TEMP_PATH: Tailspin.SpaceGame.Web\bin\Release\netcoreapp3.1\publish
 
-  jobs:
+jobs:
   BUILD:
     name: Build
     runs-on: ubuntu-latest
