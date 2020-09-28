@@ -40,7 +40,7 @@ jobs:
           ${{github.workspace}}/Tailspin.SpaceGame.Web/bin/Release/netcoreapp3.1/publish
           ${{github.workspace}}/*.ps1
 
-#------------------
+#-------------------
   DEPLOY:
     name: Deploy
     runs-on: windows-gangavali
